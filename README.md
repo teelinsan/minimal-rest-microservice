@@ -1,8 +1,13 @@
 # Minimal REST API Microservice Boilerplate
 
-A minimal REST API microservice in python.
+A minimal REST API microservice in python built with Flask.
 
 (Flask, connexion, openAPI, Swagger)
+
+- [Flask](https://github.com/pallets/flask)
+- [Flask-Injector](https://pypi.python.org/pypi/Flask-Injector)
+- [Connexion](https://github.com/zalando/connexion)
+
 
 A small microservice API database wrapper
 
@@ -43,5 +48,14 @@ To consult the API documentation just type the following address in a browser.
 ```
 http://localhost:2020/v1.0/ui/
 ```
+
+**Endpoints available at `http://localhost:2020/v1.0/{URI}`**:
+
+|Method|URI|Description|
+|------|---|-----------|
+| GET | /accounts/{user_id} | Retrive infos from the database given an id |
+| POST | /accounts/createUser | Insert data into the DB |
+| PUT | /accounts/createUser | Update data in the DB |
+| DELETE | /accounts/{user_id} | Delete a data from the DB | 
 
 # Customize the microservice
