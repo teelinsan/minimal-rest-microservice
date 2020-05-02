@@ -1,0 +1,6 @@
+Flask
+connexion[swagger-ui]
+Flask-Injector
+injector
+flask_cors
+pymongo

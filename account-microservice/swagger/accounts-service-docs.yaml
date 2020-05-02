@@ -1,0 +1,123 @@
+swagger: "2.0"
+
+info:
+  title: "My API documentation"
+  version: "1.0"
+  description: "This is a simple minimal REST API microservice.\nThe base-path of the API is `/v1.0`"
+  contact:
+    name: Andrea Santilli
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+basePath: /v1.0
+
+schemes:
+ - http
+securityDefinitions:
+  basicAuth:
+    type: basic
+    x-basicInfoFunc: api.accounts.basic_auth
+
+
+paths:
+  /accounts/createUser:
+    post:
+      tags:
+      - admins
+      operationId: api.accounts.create_user
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: user_payload
+        description: Inventory user to add
+        schema:
+          $ref: '#/definitions/User'
+          type: object
+      responses:
+        201:
+          description: Successfully added user to the DB
+        400:
+          description: invalid input, object invalid
+        409:
+          description: an existing item already exists
+
+  /accounts/updateUser:
+    put:
+      tags:
+      - admins
+      operationId: api.accounts.update_user
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: user_payload
+        description: Inventory item to add
+        schema:
+          $ref: '#/definitions/User'
+      responses:
+        201:
+          description: Successfully added user to the DB
+        400:
+          description: invalid input, object invalid
+        408:
+          description: error, item not modified
+        409:
+          description: an existing item already exists
+
+  /accounts/{user_id}:
+      get:
+        tags:
+        - public
+        operationId: api.accounts.read_user
+        parameters:
+          - in: path
+            name: user_id
+            type: string
+            required: true
+            description: Numeric ID of the user to get.
+        responses:
+          '200':
+            description: 'Fetch a user from the database'
+            schema:
+                $ref: '#/definitions/User'
+      delete:
+        tags:
+        - admins
+        parameters:
+          - in: path
+            name: user_id
+            type: string
+            required: true
+            description: Numeric ID of the user to delete.
+        operationId: api.accounts.delete_user
+        responses:
+          200:
+            description: Successfully deleted user
+          400:
+            description: invalid input, object invalid
+          409:
+            description: conflict error
+          401:
+            description: Not correctly authorized
+      
+
+# tags are used for organizing operations
+tags:
+- name: public
+  description: Operations available to regular developers
+- name: admins
+  description: Secured Admin-only calls
+
+definitions:
+  User:
+    type: object
+    properties:
+      id:  { type: string }
+      username: { type: string }
+      password: { type: string }

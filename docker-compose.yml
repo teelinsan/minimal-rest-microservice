@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+
+  account-microservice:
+    restart: always
+    build: ./account-microservice
+    image: account-microservice
+    depends_on:
+      - mongo
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+
+    environment:
+      - PYTHONUNBUFFERED=1
+      - MODE=dev
+      - MONGO_URL=mongo
+      - MONGO_PORT=27017
+      - SERVER_URL=0.0.0.0
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=pass
+
+    ports:
+      - "2020:2020"
+
