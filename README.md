@@ -25,11 +25,10 @@ Project Organization
     │   └── requirements.txt                        <- Requirements file with the list of the libraries needed
     │
     ├── /img                                        <- Folder containing the images for this README file
-    ├── docker-compose.yml                          <- Docker compose file, used to run the microservice
     ├── LICENSE                                     <- License file
-    └── README.md                                   <- This Readme file
-
-
+    ├── README.md                                   <- This Readme file
+    └── docker-compose.yml                          <- Docker compose file, used to run the microservice
+     
 --------
 
 
