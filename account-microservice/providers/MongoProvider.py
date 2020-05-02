@@ -39,7 +39,7 @@ class MongoProvider(object):
 			self.mycol.insert_one(payload)
 			return json.loads(JSONEncoder().encode(payload)), 201
 
-	def read_user(self, user_id) -> str:
+	def read_user(self, user_id):
 		"""
 		Read a user from the database given its id
 		:param user_id: int

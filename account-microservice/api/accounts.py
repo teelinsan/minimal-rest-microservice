@@ -5,19 +5,19 @@ from providers.MongoProvider import MongoProvider
 data_provider = MongoProvider()
 
 @inject
-def create_user(user_payload) -> str:
+def create_user(user_payload):
     return data_provider.create_user(user_payload)
 
 @inject
-def read_user(user_id) -> str:
+def read_user(user_id):
     return data_provider.read_user(user_id)
 
 @inject
-def update_user(user_payload) -> str:
+def update_user(user_payload):
     return data_provider.update_user(user_payload)
 
 @inject
-def delete_user(user_id) -> str:
+def delete_user(user_id):
     return data_provider.delete_user(user_id)
 
 

@@ -1,4 +1,4 @@
-# REST API Microservice boilerplate
+# Minimal REST API Microservice Boilerplate
 
 A minimal REST API microservice in python.
 
@@ -15,7 +15,7 @@ Project Organization
     ├── /account-microservice
     │   ├── /api       
     |   |   ├── __init__.py                         <- Python init file
-    |   |   └── accounts.py                         <- Intermediate data that has been transformed.
+    |   |   └── accounts.py                         <- Python file where methods are injected in the API
     │   ├── /providers       
     |   |   └── MongoProvider.py                    <- Python file where methods are implemented
     │   ├── /swagger       
@@ -32,14 +32,16 @@ Project Organization
 --------
 
 
-# Run the example
+# Run the microservice
 Run the following command in the root folder of the project (need docker and docker-composed installed).
 ```
 docker-compose up
 ```
 
-# Consult the documentation
-To cosult the API documentation just type the following address in a browser.
+# Consult the API documentation
+To consult the API documentation just type the following address in a browser.
 ```
 http://localhost:2020/v1.0/ui/
 ```
+
+# Customize the microservice
