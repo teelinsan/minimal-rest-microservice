@@ -2,13 +2,11 @@
 
 A minimal REST API microservice in python.
 
-![](img/swagger1.png)
-
-
-
-(Flask, connextion, openAPI, Swagger)
+(Flask, connexion, openAPI, Swagger)
 
 A small microservice API database wrapper
+
+![](img/swagger1.png)
 
 Project Organization
 ------------
