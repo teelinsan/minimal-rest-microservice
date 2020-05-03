@@ -1,9 +1,8 @@
 # Minimal REST API Microservice
 
-A minimal REST API microservice in python built with Flask.
-
-This is a simple microservice boilerplate written in python using Flask. 
-It was built to have a simple boilerplate/template to clone and quickly start a sclable microservice application.
+This repository contains a simple minimal REST microservice boilerplate written in python using Flask. 
+It was built to have quickstart
+a simple boilerplate/template to clone and quickly start a sclable microservice application.
 
 The service implement 
 
@@ -66,16 +65,27 @@ http://localhost:2020/v1.0/ui/
 # Customize the microservice
 
 To customize the microservice for your own purpose, you have just to modify:
-- `MongoProvider.py` This file contains the 
-- `accounts.py`
-- `accounts-service-docs.yaml` This file contains the [OpenAPI](https://swagger.io/specification/v2/) describing the RESTful API.
+- `MongoProvider.py` This file contains the implementation of the API methods. In this case it contains the methods to
+create, delete, update and read a record from mongoDB. Customize it with your desired implementation.
+- `accounts.py`: This file describes the API methods and what implementation should they run.
+- `accounts-service-docs.yaml`: This file contains the OpenAPI specification that describe the RESTful API.
 Modify this file according to your needs changing paths of the API methods and keeping in mind to modify `parameters`
-and `operationId` depending on what you edited in the `accounts.py` file.
+and `operationId` depending on what you edited in the `accounts.py` file. Consult the official documentation to learn more 
+about [OpenAPI](https://swagger.io/specification/v2/).
 
-# Create New microservices from the boilerplate
-To create a new microservice 
+Run your modified microservice with the command:
+```
+docker-compose build && docker-compose up
+```
 
-Once you have modified re-run the application with the command:
+# Create new microservices from the boilerplate
+To create a new microservice:
+- Duplicate the `account-microservice` folder and rename the it `XXXX-microservice`
+with the name of your new microservice. Customize your new microservice following the instruction in the previous section.
+- Modify the `docker-compose.yml` file duplicating the `account-microservice` specifications and renaming them `XXXX-microservice`.
+Keep in mind to modify also the parameters `- PORT=YYYY` and `ports` with your desired exposed port.
+
+Once again, run the microservices with the command:
 ```
 docker-compose build && docker-compose up
 ```
