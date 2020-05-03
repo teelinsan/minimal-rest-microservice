@@ -1,19 +1,15 @@
 # Minimal REST API Microservice
 
 This repository contains a simple minimal REST microservice boilerplate written in python using Flask. 
-It was built to have quickstart
-a simple boilerplate/template to clone and quickly start a sclable microservice application.
+It is a simple boilerplate/template to clone and quickly start a scalable microservice application.
 
-The service implement 
+The service implement an API that maps RESTful calls to a mongoDB database. It implements read, create, delete, update of accounts records 
+in mongoDB, but you can pass in input any JSON file you want to insert
+into the database (only the field `id` is mandatory). The REST API is created using [Flask](https://github.com/pallets/flask), 
+[Flask-Injector](https://pypi.python.org/pypi/Flask-Injector) and [Connexion](https://github.com/zalando/connexion).
+Connexion is a python library to use [OpenAPI](https://swagger.io/specification/), formerly Swagger, to describe and document RESTful APIs
+using a design-first approach.
 
-(Flask, connexion, openAPI, Swagger)
-
-- [Flask](https://github.com/pallets/flask)
-- [Flask-Injector](https://pypi.python.org/pypi/Flask-Injector)
-- [Connexion](https://github.com/zalando/connexion)
-
-
-A small microservice API database wrapper
 
 ![](img/swagger1.png)
 
@@ -40,14 +36,14 @@ Project Organization
      
 --------
 
-
-# Run the microservice
+# Quickstart
+## Run the microservice
 Run the following command in the root folder of the project (need docker and docker-composed installed).
 ```
 docker-compose up
 ```
 
-# Consult the API documentation
+## Consult the API documentation
 To consult the API documentation just type the following address in a browser.
 ```
 http://localhost:2020/v1.0/ui/
