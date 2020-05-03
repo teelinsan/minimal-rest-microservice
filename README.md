@@ -3,7 +3,7 @@
 This repository contains a simple minimal REST microservice boilerplate written in python using Flask. 
 It is meant to be a boilerplate/template to clone and quickly start a scalable microservice application.
 
-The service implement an API that maps RESTful calls to a mongoDB database. It implements read, create, delete, update of accounts records 
+The service implements an API that maps RESTful calls to a mongoDB database. It implements read, create, delete, update of accounts records 
 in mongoDB, but you can pass in input any JSON file you want to insert
 into the database (only the field `id` is mandatory). The REST API is created using [Flask](https://github.com/pallets/flask), 
 [Flask-Injector](https://pypi.python.org/pypi/Flask-Injector) and [Connexion](https://github.com/zalando/connexion).
