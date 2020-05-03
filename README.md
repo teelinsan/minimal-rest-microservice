@@ -1,7 +1,7 @@
 # Minimal REST API Microservice
 
 This repository contains a simple minimal REST microservice boilerplate written in python using Flask. 
-It is a simple boilerplate/template to clone and quickly start a scalable microservice application.
+It is meant to be a boilerplate/template to clone and quickly start a scalable microservice application.
 
 The service implement an API that maps RESTful calls to a mongoDB database. It implements read, create, delete, update of accounts records 
 in mongoDB, but you can pass in input any JSON file you want to insert
