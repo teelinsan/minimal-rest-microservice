@@ -1,6 +1,6 @@
-Flask
-connexion[swagger-ui]
-Flask-Injector
-injector
-flask_cors
-pymongo
+Flask==2.2.0
+connexion[swagger-ui]==2.14.2
+Flask-Injector==0.14.0
+injector==0.20.1
+flask_cors==4.0.0
+pymongo==4.4.0
